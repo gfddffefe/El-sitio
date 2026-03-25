@@ -1,96 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Phone } from 'lucide-react';
-
-const menuData = [
-  {
-    category: "Appetizers",
-    items: [
-      { name: "Tequeños Guayaba y Queso", desc: "Sweet guava and cheese wrapped in crispy dough" },
-      { name: "Mini Empanadas", desc: "Colombian & Venezuelan style" },
-      { name: "Chicharron Con Tostones", desc: "Crispy pork belly with fresh cilantro sauce" },
-      { name: "Tostones Con Hogao", desc: "Fried green plantains with traditional tomato-onion sauce" },
-      { name: "Coctel De Camarones", desc: "Fresh shrimp cocktail" },
-      { name: "Guacamole", desc: "Served with crispy chicharron chips" },
-    ]
-  },
-  {
-    category: "Arepas",
-    items: [
-      { name: "Reina Pepiada", desc: "Chicken and avocado salad, creamy and rich" },
-      { name: "Pelua", desc: "Shredded beef and yellow cheese" },
-      { name: "Pabellon", desc: "Shredded beef, black beans, plantains, and cheese" },
-      { name: "Carne Mechada", desc: "Traditional shredded beef" },
-      { name: "Pollo", desc: "Shredded chicken" },
-      { name: "Queso", desc: "Various cheese options available" },
-    ]
-  },
-  {
-    category: "Cachapas",
-    items: [
-      { name: "Queso de Mano", desc: "Traditional handmade soft cheese" },
-      { name: "Carne Mechada", desc: "Shredded beef and cheese" },
-      { name: "Santa Barbara", desc: "Grilled steak and cheese" },
-      { name: "El Junquito", desc: "Pork and cheese" },
-    ]
-  },
-  {
-    category: "Main Dishes",
-    items: [
-      { name: "Bandeja Paisa El Sitio", desc: "Traditional Colombian platter with beans, rice, chicharron, egg, and more" },
-      { name: "Pabellon Criollo", desc: "Venezuelan national dish with shredded beef, rice, beans, and plantains" },
-      { name: "Parrilla Mar y Tierra", desc: "Surf and turf grill" },
-      { name: "Salmon", desc: "Prepared in multiple styles" },
-      { name: "Corvina", desc: "Fresh fish dishes" },
-      { name: "Bistec", desc: "Various steak options" },
-    ]
-  },
-  {
-    category: "Pepitos",
-    items: [
-      { name: "Mixto", desc: "Mixed meats sandwich" },
-      { name: "Pollo", desc: "Chicken sandwich" },
-      { name: "Carne", desc: "Beef sandwich" },
-      { name: "El Sitio", desc: "Our house special sandwich" },
-    ]
-  },
-  {
-    category: "Breakfast",
-    items: [
-      { name: "Desayuno El Sitio", desc: "House special breakfast" },
-      { name: "Venezuelan Dream Breakfast", desc: "Traditional morning spread" },
-      { name: "Huevos Rancheros", desc: "Eggs ranchero style" },
-      { name: "Omelettes", desc: "Custom made to order" },
-    ]
-  },
-  {
-    category: "Salads",
-    items: [
-      { name: "Salmon Salad", desc: "Fresh greens with grilled salmon" },
-      { name: "Chicken Salad", desc: "Grilled chicken over mixed greens" },
-      { name: "Cesar Salad", desc: "Classic Caesar" },
-      { name: "Picanha Salad", desc: "Premium grilled steak over fresh salad" },
-    ]
-  },
-  {
-    category: "Drinks",
-    items: [
-      { name: "Sodas", desc: "Coca Cola, Sprite, Fanta" },
-      { name: "Latin Favorites", desc: "Inca Kola, Jupiña, Freskolita, Malta" },
-      { name: "Water", desc: "Perrier, Agua, Agua con gas" },
-    ]
-  },
-  {
-    category: "Alcohol",
-    items: [
-      { name: "Beer", desc: "Corona, Heineken, Stella, Polar" },
-      { name: "Whisky", desc: "Buchanan's, Old Parr" },
-      { name: "Vodka", desc: "Tito's, Grey Goose" },
-      { name: "Tequila", desc: "Don Julio, Patron" },
-      { name: "Cocktails", desc: "Tequila Sunrise and more" },
-    ]
-  }
-];
+import { Phone, ShoppingBag } from 'lucide-react';
+import { menuData } from '../data/menuData';
 
 export default function Menu() {
   const [activeCategory, setActiveCategory] = useState(menuData[0].category);
@@ -147,23 +58,37 @@ export default function Menu() {
                           {item.name}
                         </h5>
                         <div className="flex-grow border-b border-dotted border-wood/20 mx-4"></div>
+                        <span className="font-bold text-secondary">{item.price}</span>
                       </div>
-                      <p className="text-sm text-wood-light leading-relaxed">
-                        {item.desc}
-                      </p>
+                      {item.desc && (
+                        <p className="text-sm text-wood-light leading-relaxed">
+                          {item.desc}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
 
                 <div className="mt-16 text-center bg-cream p-8 rounded-2xl border border-wood/5">
-                  <p className="text-lg font-medium text-wood mb-4">Ready to taste the magic?</p>
-                  <a
-                    href="tel:+17867823901"
-                    className="inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary-hover text-white rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg"
-                  >
-                    <Phone className="mr-2 w-5 h-5" />
-                    Call to Order
-                  </a>
+                  <p className="text-lg font-medium text-wood mb-6">Ready to taste the magic?</p>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a
+                      href="https://www.google.com/viewer/chooseprovider?mid=/g/11v3gjzgh3&g2lbs=AIBNGdVlB0ZwaF8zeENFOTgkmhykgUcOA6ZFY5EnXBa2fbc2XitTfcVlQtswA1kdRSGEHkIj9l59o5DZY2HmXv9oylU9x0XWyQ%3D%3D&hl=en-US&gl=us&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=cVDDaYnrDIqrptQPlsHa-Qg&ei=cVDDaYnrDIqrptQPlsHa-Qg&fo_s=OA&opi=79508299&ebb=1&cs=0&foub=mcpp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-secondary hover:bg-secondary/90 text-wood rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg"
+                    >
+                      <ShoppingBag className="mr-2 w-5 h-5" />
+                      Order Delivery
+                    </a>
+                    <a
+                      href="tel:+17867823901"
+                      className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-primary hover:bg-primary-hover text-white rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-lg"
+                    >
+                      <Phone className="mr-2 w-5 h-5" />
+                      Call to Order
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>

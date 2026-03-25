@@ -17,10 +17,13 @@ export default function About() {
           >
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                alt="Family enjoying a meal at El Sitio"
+                src="/el-sitio-interior.jpg"
+                alt="El Sitio Bar & Grill Interior"
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  // Fallback to placeholder if the user hasn't uploaded the image yet
+                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80";
+                }}
               />
             </div>
             <div className="absolute -bottom-8 -right-8 bg-secondary text-wood p-8 rounded-full shadow-xl w-48 h-48 flex flex-col items-center justify-center text-center transform rotate-12 border-4 border-white">
