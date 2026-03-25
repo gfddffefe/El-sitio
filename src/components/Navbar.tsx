@@ -28,7 +28,9 @@ export default function Navbar() {
               (786) 782-3901
             </a>
             <a 
-              href="#reservation" 
+              href="https://api.whatsapp.com/send/?phone=17867823901&text&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-full font-medium transition-colors flex items-center"
             >
               <Calendar className="w-4 h-4 mr-2" />
@@ -92,7 +94,9 @@ export default function Navbar() {
                   (786) 782-3901
                 </a>
                 <a 
-                  href="#reservation" 
+                  href="https://api.whatsapp.com/send/?phone=17867823901&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="flex items-center justify-center w-full px-4 py-3 bg-primary text-white rounded-xl font-medium"
                 >

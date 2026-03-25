@@ -12,7 +12,9 @@ export default function MobileStickyCTA() {
           Call
         </a>
         <a
-          href="#reservation"
+          href="https://api.whatsapp.com/send/?phone=17867823901&text&type=phone_number&app_absent=0"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex-1 bg-primary hover:bg-primary-hover text-white py-3 rounded-xl font-bold flex items-center justify-center transition-colors shadow-lg"
         >
           <Calendar className="w-5 h-5 mr-2" />

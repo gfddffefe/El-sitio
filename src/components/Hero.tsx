@@ -35,7 +35,9 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <a
-              href="#reservation"
+              href="https://api.whatsapp.com/send/?phone=17867823901&text&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary-hover text-white rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-lg flex items-center justify-center"
             >
               <Calendar className="w-5 h-5 mr-2" />
